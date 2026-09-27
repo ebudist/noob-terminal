@@ -5,6 +5,7 @@
 !*/
 !README.md
 !tmux/tmux.conf
+!ghostty/config
 !neovim/**/*.lua
 !neovim/*.json
 !neovim/stylua.toml

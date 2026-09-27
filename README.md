@@ -22,14 +22,14 @@ it myself. Config lives in `neovim/`.
 
 <img src="assets/ghostty.png" height="20" align="top" alt=""> **[Ghostty](https://ghostty.org/)**
 is the terminal itself. Fast, native on macOS, and its defaults are good
-enough that I still have no config file for it. That is the next thing to
-land here.
+enough that my config stays at three lines. Config lives in `ghostty/`.
 
 ## Install
 
 ```bash
 ln -sf  "$PWD/tmux/tmux.conf" ~/.tmux.conf
 ln -sfn "$PWD/neovim"         ~/.config/nvim
+ln -sf  "$PWD/ghostty/config" ~/.config/ghostty/config
 tmux source-file ~/.tmux.conf   # if a server is already running
 ```
 
@@ -95,8 +95,11 @@ without the mouse:
 
 ### <img src="assets/ghostty.png" height="20" align="top" alt=""> Ghostty
 
-Ghostty has these keys built in. No config is necessary. tmux makes the
-splits, so one Ghostty window is usually enough.
+Ghostty has these keys built in. tmux makes the splits, so one Ghostty
+window is usually enough.
+
+`ghostty/config` sets the shell, the font, and one keybind. Run
+`ghostty +show-config --default` to list all 634 options.
 
 | Key | What it does |
 | :--- | :--- |
@@ -133,11 +136,6 @@ file explorer that shows dotfiles and ignored files.
 
 The config is the [LazyVim starter](https://github.com/LazyVim/starter). All
 credit for the plugins below goes to their authors.
-
-The logos in `assets/` belong to their projects. The tmux mark comes from
-[tmux.app](https://tmux.app/), the lazy.nvim mark from
-[lazy.folke.io](https://lazy.folke.io/), and the Ghostty mark from
-[ghostty.org](https://ghostty.org/).
 
 **Foundation**
 
@@ -209,3 +207,11 @@ The logos in `assets/` belong to their projects. The tmux mark comes from
 `allow-passthrough`, `extended-keys`, and the `extkeys` terminal feature.
 Without them, tmux blocks Shift+Enter and desktop notifications do not reach
 Ghostty.
+
+---
+
+<sub>The logos in `assets/` belong to their projects. The tmux mark comes
+from <a href="https://tmux.app/">tmux.app</a>, the lazy.nvim mark from
+<a href="https://lazy.folke.io/">lazy.folke.io</a>, and the Ghostty mark from
+<a href="https://ghostty.org/">ghostty.org</a>. Every plugin and tool listed
+above belongs to its own authors.</sub>

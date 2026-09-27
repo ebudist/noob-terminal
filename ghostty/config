@@ -1,0 +1,12 @@
+# Ghostty reads this file at ~/.config/ghostty/config.
+# Run `ghostty +show-config --default` to list all 634 options and their
+# defaults. Only put a line here when it differs from the default.
+
+command = /usr/local/bin/fish
+
+font-family = "MesloLGS Nerd Font Mono Regular"
+font-size = 15
+
+# Written by Claude Code `/terminal-setup`. Ghostty now handles Shift+Enter
+# on its own, so test a multiline prompt before you remove this line.
+keybind = shift+enter=text:\x1b\r
