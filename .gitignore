@@ -4,4 +4,10 @@
 !.gitignore
 !*/
 !README.md
-!tmux.conf
+!tmux/tmux.conf
+!neovim/**/*.lua
+!neovim/*.json
+!neovim/stylua.toml
+!neovim/LICENSE
+!assets/*.svg
+!assets/*.png

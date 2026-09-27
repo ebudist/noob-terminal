@@ -1,23 +1,43 @@
 # noob-terminal
 
-The terminal configs I use every day on macOS.
+Hey. This is the setup I use in my terminal every day, on macOS.
 
-| Tool | Status |
-| :--- | :--- |
-| tmux | `tmux.conf` |
-| Ghostty | planned |
-| Neovim | planned |
+I work in infrastructure, so most of my day happens in terminal sessions.
+Everything here is picked to survive that. Closing the laptop should not kill
+my work.
+
+One directory per tool.
+
+## The stack
+
+<img src="assets/tmux.svg" height="20" align="top" alt=""> **[tmux](https://tmux.app/)**
+is the session manager, and the reason I stopped opening ten terminal tabs. A
+session keeps running when I close the terminal, lose an SSH connection, or
+shut the laptop. Config lives in `tmux/`.
+
+<img src="assets/lazy-nvim.svg" height="20" align="top" alt=""> **Neovim**
+is my editor, set up with [LazyVim](https://github.com/LazyVim/LazyVim) so I
+get a language server, completion, and a file tree without maintaining any of
+it myself. Config lives in `neovim/`.
+
+<img src="assets/ghostty.png" height="20" align="top" alt=""> **[Ghostty](https://ghostty.org/)**
+is the terminal itself. Fast, native on macOS, and its defaults are good
+enough that I still have no config file for it. That is the next thing to
+land here.
 
 ## Install
 
 ```bash
-ln -sf "$PWD/tmux.conf" ~/.tmux.conf
+ln -sf  "$PWD/tmux/tmux.conf" ~/.tmux.conf
+ln -sfn "$PWD/neovim"         ~/.config/nvim
 tmux source-file ~/.tmux.conf   # if a server is already running
 ```
 
+Neovim installs its plugins on the first start.
+
 ## Keyboard usage
 
-### tmux
+### <img src="assets/tmux.svg" height="20" align="top" alt=""> tmux
 
 The prefix is `Ctrl+B`. Press it, release it, then press the next key.
 
@@ -73,7 +93,7 @@ without the mouse:
 | `Ctrl+B` `r` | reload `~/.tmux.conf` |
 | `Ctrl+B` `?` | show every binding |
 
-### Ghostty
+### <img src="assets/ghostty.png" height="20" align="top" alt=""> Ghostty
 
 Ghostty has these keys built in. No config is necessary. tmux makes the
 splits, so one Ghostty window is usually enough.
@@ -88,9 +108,104 @@ splits, so one Ghostty window is usually enough.
 | `Cmd+1`…`9` | go to a tab by number |
 | `Cmd+W` | close the split or the tab |
 
+### <img src="assets/lazy-nvim.svg" height="20" align="top" alt=""> Neovim
+
+This config is the LazyVim starter with two changes. Everything else is a
+LazyVim default.
+
+The leader key is Space. Press it and wait. A menu lists every key that can
+follow, so you can find a command without a cheat sheet.
+
+| Key | What it does |
+| :--- | :--- |
+| `<leader>` | show the menu of every leader key |
+| `<leader>e` | open the file explorer |
+| `<leader><space>` | find a file in the project |
+| `<leader>/` | search the text of the whole project |
+| `<leader>lg` | open LazyGit |
+| `:Lazy` | manage the plugins |
+| `:LazyExtras` | add language support, such as Go or Terraform |
+
+The two changes in `neovim/lua/plugins/`: `lazygit.nvim` on `<leader>lg`, and a
+file explorer that shows dotfiles and ignored files.
+
+### Neovim stack
+
+The config is the [LazyVim starter](https://github.com/LazyVim/starter). All
+credit for the plugins below goes to their authors.
+
+The logos in `assets/` belong to their projects. The tmux mark comes from
+[tmux.app](https://tmux.app/), the lazy.nvim mark from
+[lazy.folke.io](https://lazy.folke.io/), and the Ghostty mark from
+[ghostty.org](https://ghostty.org/).
+
+**Foundation**
+
+| Plugin | What it does |
+| :--- | :--- |
+| [LazyVim](https://github.com/LazyVim/LazyVim) | the preset that sets the defaults, keymaps, and plugin list |
+| [lazy.nvim](https://github.com/folke/lazy.nvim) | installs the plugins and pins them in `lazy-lock.json` |
+
+**Language support**
+
+| Plugin | What it does |
+| :--- | :--- |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | connects Neovim to a language server |
+| [mason.nvim](https://github.com/mason-org/mason.nvim) | installs the language servers, linters, and formatters |
+| [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim) | joins Mason to lspconfig |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | parses the code for syntax colour and folds |
+| [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects) | adds text objects such as "the function" |
+| [conform.nvim](https://github.com/stevearc/conform.nvim) | formats the file on save |
+| [nvim-lint](https://github.com/mfussenegger/nvim-lint) | runs the linters |
+| [lazydev.nvim](https://github.com/folke/lazydev.nvim) | completes the Neovim Lua API in this config |
+
+**Editing**
+
+| Plugin | What it does |
+| :--- | :--- |
+| [blink.cmp](https://github.com/saghen/blink.cmp) | the completion menu |
+| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) | a snippet collection |
+| [flash.nvim](https://github.com/folke/flash.nvim) | jumps to any word on screen |
+| [mini.ai](https://github.com/nvim-mini/mini.ai) | better text objects |
+| [mini.pairs](https://github.com/nvim-mini/mini.pairs) | closes brackets and quotes |
+| [ts-comments.nvim](https://github.com/folke/ts-comments.nvim) | picks the right comment marker per language |
+| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) | closes HTML and JSX tags |
+| [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) | search and replace across the project |
+
+**Interface**
+
+| Plugin | What it does |
+| :--- | :--- |
+| [snacks.nvim](https://github.com/folke/snacks.nvim) | the picker, the terminal, the dashboard, and more |
+| [which-key.nvim](https://github.com/folke/which-key.nvim) | shows the menu after you press the leader key |
+| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) | the file explorer |
+| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | the status line |
+| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | the buffer tabs |
+| [noice.nvim](https://github.com/folke/noice.nvim) | replaces the command line and the messages |
+| [trouble.nvim](https://github.com/folke/trouble.nvim) | lists the diagnostics and the references |
+| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) | highlights TODO and FIXME |
+| [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) | the colour scheme in use, `tokyonight-moon` |
+| [catppuccin](https://github.com/catppuccin/nvim) | a second colour scheme, not active |
+| [mini.icons](https://github.com/nvim-mini/mini.icons) | the file type icons |
+| [nui.nvim](https://github.com/MunifTanjim/nui.nvim) | the window components other plugins draw with |
+
+**Git**
+
+| Plugin | What it does |
+| :--- | :--- |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | shows the changed lines in the sign column |
+| [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) | opens [lazygit](https://github.com/jesseduffield/lazygit) in Neovim |
+
+**Support**
+
+| Plugin | What it does |
+| :--- | :--- |
+| [persistence.nvim](https://github.com/folke/persistence.nvim) | restores the session per directory |
+| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) | a Lua helper library other plugins need |
+
 ## Notes
 
-`tmux.conf` sets three options that Claude Code needs inside tmux:
+`tmux/tmux.conf` sets three options that Claude Code needs inside tmux:
 `allow-passthrough`, `extended-keys`, and the `extkeys` terminal feature.
 Without them, tmux blocks Shift+Enter and desktop notifications do not reach
 Ghostty.
