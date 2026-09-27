@@ -134,72 +134,22 @@ file explorer that shows dotfiles and ignored files.
 
 ### Neovim stack
 
-The config is the [LazyVim starter](https://github.com/LazyVim/starter). All
-credit for the plugins below goes to their authors.
+Built on the [LazyVim starter](https://github.com/LazyVim/starter), so most
+of it arrives preconfigured. The parts I lean on:
 
-**Foundation**
-
-| Plugin | What it does |
+| What it gives me | Plugin |
 | :--- | :--- |
-| [LazyVim](https://github.com/LazyVim/LazyVim) | the preset that sets the defaults, keymaps, and plugin list |
-| [lazy.nvim](https://github.com/folke/lazy.nvim) | installs the plugins and pins them in `lazy-lock.json` |
+| Language servers | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig), installed by [mason.nvim](https://github.com/mason-org/mason.nvim) |
+| Completion | [blink.cmp](https://github.com/saghen/blink.cmp) |
+| Syntax and text objects | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) |
+| Format and lint on save | [conform.nvim](https://github.com/stevearc/conform.nvim), [nvim-lint](https://github.com/mfussenegger/nvim-lint) |
+| Changed lines in the gutter | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) |
+| Git in a window | [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim), wrapping [lazygit](https://github.com/jesseduffield/lazygit) |
+| File tree and pickers | [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim), [snacks.nvim](https://github.com/folke/snacks.nvim) |
+| Everything else | [LazyVim](https://github.com/LazyVim/LazyVim) on [lazy.nvim](https://github.com/folke/lazy.nvim) |
 
-**Language support**
-
-| Plugin | What it does |
-| :--- | :--- |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | connects Neovim to a language server |
-| [mason.nvim](https://github.com/mason-org/mason.nvim) | installs the language servers, linters, and formatters |
-| [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim) | joins Mason to lspconfig |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | parses the code for syntax colour and folds |
-| [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects) | adds text objects such as "the function" |
-| [conform.nvim](https://github.com/stevearc/conform.nvim) | formats the file on save |
-| [nvim-lint](https://github.com/mfussenegger/nvim-lint) | runs the linters |
-| [lazydev.nvim](https://github.com/folke/lazydev.nvim) | completes the Neovim Lua API in this config |
-
-**Editing**
-
-| Plugin | What it does |
-| :--- | :--- |
-| [blink.cmp](https://github.com/saghen/blink.cmp) | the completion menu |
-| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) | a snippet collection |
-| [flash.nvim](https://github.com/folke/flash.nvim) | jumps to any word on screen |
-| [mini.ai](https://github.com/nvim-mini/mini.ai) | better text objects |
-| [mini.pairs](https://github.com/nvim-mini/mini.pairs) | closes brackets and quotes |
-| [ts-comments.nvim](https://github.com/folke/ts-comments.nvim) | picks the right comment marker per language |
-| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) | closes HTML and JSX tags |
-| [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) | search and replace across the project |
-
-**Interface**
-
-| Plugin | What it does |
-| :--- | :--- |
-| [snacks.nvim](https://github.com/folke/snacks.nvim) | the picker, the terminal, the dashboard, and more |
-| [which-key.nvim](https://github.com/folke/which-key.nvim) | shows the menu after you press the leader key |
-| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) | the file explorer |
-| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | the status line |
-| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | the buffer tabs |
-| [noice.nvim](https://github.com/folke/noice.nvim) | replaces the command line and the messages |
-| [trouble.nvim](https://github.com/folke/trouble.nvim) | lists the diagnostics and the references |
-| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) | highlights TODO and FIXME |
-| [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) | the colour scheme in use, `tokyonight-moon` |
-| [catppuccin](https://github.com/catppuccin/nvim) | a second colour scheme, not active |
-| [mini.icons](https://github.com/nvim-mini/mini.icons) | the file type icons |
-| [nui.nvim](https://github.com/MunifTanjim/nui.nvim) | the window components other plugins draw with |
-
-**Git**
-
-| Plugin | What it does |
-| :--- | :--- |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | shows the changed lines in the sign column |
-| [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) | opens [lazygit](https://github.com/jesseduffield/lazygit) in Neovim |
-
-**Support**
-
-| Plugin | What it does |
-| :--- | :--- |
-| [persistence.nvim](https://github.com/folke/persistence.nvim) | restores the session per directory |
-| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) | a Lua helper library other plugins need |
+`neovim/lazy-lock.json` holds the full list of 34 plugins and pins each one
+to a commit.
 
 ## Notes
 
