@@ -24,6 +24,10 @@ it myself. Config lives in `neovim/`.
 is the terminal itself. Fast, native on macOS, and its defaults are good
 enough that my config stays at three lines. Config lives in `ghostty/`.
 
+**[fish](https://fishshell.com/)**
+is my shell. Autosuggestions and man page completions with no plugins. The
+config stays local, full of SSH aliases and internal hostnames.
+
 ## Install
 
 ```bash

@@ -2,7 +2,7 @@
 # Run `ghostty +show-config --default` to list all 634 options and their
 # defaults. Only put a line here when it differs from the default.
 
-command = /usr/local/bin/fish
+command = /opt/homebrew/bin/fish
 
 font-family = "MesloLGS Nerd Font Mono Regular"
 font-size = 15
