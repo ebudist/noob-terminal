@@ -1,0 +1,7 @@
+# Deny by default. A blocklist can never list every secret file. This can.
+# To publish a new file, add a matching "!" line below. Nothing else ships.
+*
+!.gitignore
+!*/
+!README.md
+!tmux.conf
