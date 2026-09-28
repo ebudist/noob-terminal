@@ -21,12 +21,19 @@ get a language server, completion, and a file tree without maintaining any of
 it myself. Config lives in `neovim/`.
 
 <img src="assets/ghostty.png" height="20" align="top" alt=""> **[Ghostty](https://ghostty.org/)**
-is the terminal itself. Fast, native on macOS, and its defaults are good
-enough that my config stays at three lines. Config lives in `ghostty/`.
+is the terminal itself. Fast, native on macOS, and the defaults are good
+enough that I mostly leave it alone. Config lives in `ghostty/`.
 
-**[fish](https://fishshell.com/)**
+<img src="assets/fish.png" height="20" align="top" alt=""> **[fish](https://fishshell.com/)**
 is my shell. Autosuggestions and man page completions with no plugins. The
 config stays local, full of SSH aliases and internal hostnames.
+
+<img src="assets/starship.png" height="20" align="top" alt=""> **[starship](https://starship.rs/)**
+draws the prompt. Directory, Kubernetes context, language version and git
+state in one line, so I stop running commands to work out where I am. Config
+lives in `starship/`.
+
+<img src="assets/starship-prompt.png" width="412" alt="A prompt showing the user, the directory, a Kubernetes context, the git branch and one modified file">
 
 ## Install
 
@@ -34,6 +41,7 @@ config stays local, full of SSH aliases and internal hostnames.
 ln -sf  "$PWD/tmux/tmux.conf" ~/.tmux.conf
 ln -sfn "$PWD/neovim"         ~/.config/nvim
 ln -sf  "$PWD/ghostty/config" ~/.config/ghostty/config
+ln -sf  "$PWD/starship/starship.toml" ~/.config/starship.toml
 tmux source-file ~/.tmux.conf   # if a server is already running
 ```
 
@@ -166,6 +174,8 @@ Ghostty.
 
 <sub>The logos in `assets/` belong to their projects. The tmux mark comes
 from <a href="https://tmux.app/">tmux.app</a>, the lazy.nvim mark from
-<a href="https://lazy.folke.io/">lazy.folke.io</a>, and the Ghostty mark from
-<a href="https://ghostty.org/">ghostty.org</a>. Every plugin and tool listed
-above belongs to its own authors.</sub>
+<a href="https://lazy.folke.io/">lazy.folke.io</a>, the Ghostty mark from
+<a href="https://ghostty.org/">ghostty.org</a>, the fish mark from the
+<a href="https://github.com/fish-shell/fish-shell">fish-shell</a> repo, and
+the starship mark from <a href="https://starship.rs/">starship.rs</a>. Every
+plugin and tool listed above belongs to its own authors.</sub>

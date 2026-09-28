@@ -6,6 +6,7 @@
 !README.md
 !tmux/tmux.conf
 !ghostty/config
+!starship/starship.toml
 !neovim/**/*.lua
 !neovim/*.json
 !neovim/stylua.toml
