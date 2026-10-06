@@ -5,6 +5,7 @@
 !*/
 !README.md
 !tmux/tmux.conf
+!tmux/git-status.sh
 !ghostty/config
 !starship/starship.toml
 !neovim/**/*.lua

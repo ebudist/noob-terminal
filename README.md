@@ -13,7 +13,9 @@ One directory per tool.
 <img src="assets/tmux.svg" height="20" align="top" alt=""> **[tmux](https://tmux.app/)**
 is the session manager, and the reason I stopped opening ten terminal tabs. A
 session keeps running when I close the terminal, lose an SSH connection, or
-shut the laptop. Config lives in `tmux/`.
+shut the laptop. The status bar came out of a browse through
+[awesome-tmux](https://github.com/rothgar/awesome-tmux), minus the plugins.
+Config lives in `tmux/`.
 
 <img src="assets/lazy-nvim.svg" height="20" align="top" alt=""> **Neovim**
 is my editor, set up with [LazyVim](https://github.com/LazyVim/LazyVim) so I
@@ -39,6 +41,7 @@ lives in `starship/`.
 
 ```bash
 ln -sf  "$PWD/tmux/tmux.conf" ~/.tmux.conf
+ln -sf  "$PWD/tmux/git-status.sh" ~/.tmux-git-status.sh
 ln -sfn "$PWD/neovim"         ~/.config/nvim
 ln -sf  "$PWD/ghostty/config" ~/.config/ghostty/config
 ln -sf  "$PWD/starship/starship.toml" ~/.config/starship.toml
@@ -104,6 +107,18 @@ without the mouse:
 | :--- | :--- |
 | `Ctrl+B` `r` | reload `~/.tmux.conf` |
 | `Ctrl+B` `?` | show every binding |
+
+The status bar carries the session name, the windows, the Kubernetes context
+and the git state of the current pane. The git counts read:
+
+| Mark | Meaning |
+| :--- | :--- |
+| `+2` | 2 files staged |
+| `!3` | 3 tracked files changed but not staged |
+| `?1` | 1 untracked file |
+| `⇡2` | 2 commits not pushed |
+| `⇣1` | 1 commit not pulled |
+| `~1` | 1 file with a merge conflict |
 
 ### <img src="assets/ghostty.png" height="20" align="top" alt=""> Ghostty
 
