@@ -12,5 +12,3 @@
 !neovim/*.json
 !neovim/stylua.toml
 !neovim/LICENSE
-!assets/*.svg
-!assets/*.png
