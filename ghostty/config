@@ -7,6 +7,10 @@ command = /opt/homebrew/bin/fish
 font-family = "MesloLGS Nerd Font Mono Regular"
 font-size = 15
 
+# Send Option as Alt so Option+Delete deletes a word. The cost is macOS
+# Option+key Unicode input, which stops working.
+macos-option-as-alt = true
+
 # Written by Claude Code `/terminal-setup`. Ghostty now handles Shift+Enter
 # on its own, so test a multiline prompt before you remove this line.
 keybind = shift+enter=text:\x1b\r
