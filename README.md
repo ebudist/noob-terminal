@@ -19,7 +19,8 @@ what I changed.
 - `|` and `-` to split, new panes and windows open in the current directory
 - vi copy mode that copies to the macOS clipboard
 - Mouse on, windows start at 1
-- Status bar in tokyonight-moon, with the Kubernetes context and git state
+- Status bar in tokyonight-moon, with the last 3 directories of the current
+  path, the Kubernetes context, and git state
 - Passthrough and extended keys for Claude Code
 
 ## starship
