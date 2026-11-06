@@ -1,0 +1,9 @@
+--popup 80%
+--style full
+--input-label ' Input '
+--bind 'result:transform-list-label:printf " %s matches " "$FZF_MATCH_COUNT"'
+--color 'border:#aaaaaa,label:#cccccc'
+--color 'preview-border:#9999cc,preview-label:#ccccff'
+--color 'list-border:#669966,list-label:#99cc99'
+--color 'input-border:#996666,input-label:#ffcccc'
+--color 'header-border:#6699cc,header-label:#99ccff'

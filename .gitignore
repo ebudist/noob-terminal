@@ -8,6 +8,7 @@
 !tmux/git-status.sh
 !ghostty/config
 !starship/starship.toml
+!fzf/fzfrc
 !neovim/**/*.lua
 !neovim/*.json
 !neovim/stylua.toml

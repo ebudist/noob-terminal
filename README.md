@@ -4,7 +4,7 @@ This repo is just a bunch of my personal terminal setup that I use daily on
 my MacBook. I put it here so I won't forget it when I want to reuse it. If
 someone else wants to use it too, you're welcome.
 
-The stack: Ghostty, tmux, starship, Neovim.
+The stack: Ghostty, tmux, starship, Neovim, fzf.
 
 The configs are mostly default, with small changes to fit my needs. Here's
 what I changed.
@@ -33,3 +33,16 @@ what I changed.
 - LazyVim starter
 - lazygit on `<leader>lg`
 - neo-tree shows dotfiles and ignored files
+
+## fzf
+
+- Opens in a tmux popup at 80% of the window
+- `full` style preset, with a colored border on each section
+- The list label shows the match count
+
+fzf reads `fzfrc` only when `FZF_DEFAULT_OPTS_FILE` points to it. For fish,
+add this line to `config.fish`:
+
+```fish
+set -gx FZF_DEFAULT_OPTS_FILE ~/.config/fzf/fzfrc
+```
