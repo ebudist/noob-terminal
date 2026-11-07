@@ -11,6 +11,10 @@ font-size = 15
 # Option+key Unicode input, which stops working.
 macos-option-as-alt = true
 
+# Keep Cmd+C in Ghostty. Without a selection, the default binding sends
+# the key on, and tmux turns it into Alt+C.
+keybind = super+c=copy_to_clipboard
+
 # Written by Claude Code `/terminal-setup`. Ghostty now handles Shift+Enter
 # on its own, so test a multiline prompt before you remove this line.
 keybind = shift+enter=text:\x1b\r
